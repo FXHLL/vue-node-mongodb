@@ -23,7 +23,8 @@ module.exports = app=>{
     app.post("/admin/api/upload",authMiddleware(),upload.single("file"),async (req,res)=>{
         let file = req.file
         console.log(upload.single.toString());
-        file.url = `http://localhost:3000/uploads/${file.filename}`
+        file.url = `http://www.fxhll.top/uploads/${file.filename}`
+        // file.url = `http://localhost:3000/uploads/${file.filename}`
         res.send(file)
     })
 

@@ -12,7 +12,7 @@ app.use("/uploads",express.static(__dirname + "/uploads"))//通过express托管�
 app.set('secret','asf98f7ssf7979f8s97')//设置token加密字符串,开发中应该放入环境变量中
 
 require("./routes/admin")(app)//require会默认寻找目录中的index.js
-require("./plugins/db")(app)
+require("./plugins/db")(app) 
 require("./routes/web")(app)
 
 app.listen(3000,()=>{

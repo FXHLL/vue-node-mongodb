@@ -1,5 +1,3 @@
-
-
 module.exports = app => {
     const express = require('express')
     const router = express.Router()//创建路由实例
