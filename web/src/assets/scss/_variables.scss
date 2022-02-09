@@ -1,0 +1,64 @@
+//scss中可以定义变量，使用 键值对 存储颜色
+$colors:(
+    "primary":#db9e3f,
+    "info":#4b67af,
+    "info_1":#4394e4,
+    "blue":#1f3695,
+    "white":#fff,//颜色关键字必须使用""
+    "light":#f9f9f9,
+    "light-1":#d4d9de,
+    "light-2":#fcfcfc,
+    "red":#ff3636,
+    "danger":#832621,
+    "grey":#999,
+    "grey-1":#666,
+    "dark-1":#343440,
+    "dark-2":#333,
+    "dark-3":#3b3b34,
+    "dark":#222,
+    "black":#000,
+);
+
+$border-color:map-get($map: $colors, $key: 'light-1');
+
+//font size
+$base-font-size:1rem;
+$font-sizes:(
+xxs:0.6154,//8px
+xs:0.7692,//10px
+sm:0.9231,//12px
+md:1,//13px
+lg:1.0769,//14px
+xl:1.2308,//16px
+);
+
+$flex-jc:(
+    start:flex-start,
+    end:flex-end,
+    center:center,
+    between:space-between,
+    around:space-around,
+);
+
+$flex-ai:(
+    start:flex-start,
+    end:flex-end,
+    center:center,
+    stretch:stretch,
+);
+
+//spacing(间距)
+//0-5:0
+//.mt-1 => margin-top .pt .ml
+
+$spacing-types:(m:margin,p:padding);
+$spacing-directions:(t:top,b:bottom,l:left,r:right);
+$spacing-base-size:1rem;//表示基础的间距单位
+$spacing-sizes:(
+    0:0,
+    1:0.25,
+    2:0.5,
+    3:1,
+    4:1.5,
+    5:3,
+);
