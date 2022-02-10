@@ -227,35 +227,42 @@ a{
         background-position: 0 96.3%;     
     }
     &.sprite-news-9{
-        background: url(//game.gtimg.cn/images/yxzj/m/m201706/images/bg/version-icon.png) no-repeat -1px 0px;; 
-        background-size: 27.5px;
-        width: 27.5px;
-        height: 32px;
+        background: url(//game.gtimg.cn/images/yxzj/m/m201706/images/bg/version-icon.png) no-repeat -0.0769rem 0rem;; 
+        background-size: 2.1154rem;
+        width: 2.1154rem;
+        height: 2.4615rem;
     }
     &.sprite-news-10{
-        background: url(//game.gtimg.cn/images/yxzj/m/m201706/images/bg/djhj.png) no-repeat 0 3px;  
-        background-size: 40px; 
-        width: 40px;
-        height: 32px;     
+        background: url(//game.gtimg.cn/images/yxzj/m/m201706/images/bg/djhj.png) no-repeat 0 0.2308rem;  
+        background-size: 3.0769rem; 
+        width: 3.0769rem;
+        height: 2.4615rem;     
     }
     &.sprite-news-11{
-        background: url(//game.gtimg.cn/images/yxzj/m/m201706/images/bg/ipgc.png) no-repeat 0 -2.5px;
-        background-size: 35px;
-        width: 35px;
-        height: 32px; 
+        background: url(//game.gtimg.cn/images/yxzj/m/m201706/images/bg/ipgc.png) no-repeat 0 -0.1923rem;
+        background-size: 2.6923rem;
+        width: 2.6923rem;
+        height: 2.4615rem; 
     }
     &.sprite-news-12{
-        background: url(//game.gtimg.cn/images/yxzj/m/m201706/images/bg/cyhdy.png) no-repeat 0 -2.5px;   
-        background-size: 35px;
-        width: 35px;
-        height: 32px; 
+        background: url(//game.gtimg.cn/images/yxzj/m/m201706/images/bg/cyhdy.png) no-repeat 0 -0.1923rem;   
+        background-size: 2.6923rem;
+        width: 2.6923rem;
+        height: 2.4615rem;
     }
     
     &.sprite-arrow{
         background-position: 38.577% 52.076%;
-        background-size: 375px 455px;
-        width: 10px;
-        height: 10px;;
+        background-size: 28.8462rem 35rem;
+        width: 0.7692rem;
+        height: 0.7692rem;;
+    }
+
+    &.sprite-logo{
+        background-position: 0 -23.6923rem;
+        background-size: 28.8462rem;
+        width: 2.3077rem;
+        height: 2.3077rem;
     }
 
 }
