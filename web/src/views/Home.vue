@@ -3,13 +3,13 @@
 
     <swiper :options="swiperOption" >  
       <swiper-slide> 
-        <img class="w-100" src="../assets/images/轮播1.jpg" alt="">
+        <img class="w-100" src="//ossweb-img.qq.com/upload/adw/image/194/20220123/c89c1fbdd5c89216fa073db8c73976d7.jpeg" alt="">
       </swiper-slide>
       <swiper-slide>
-        <img class="w-100" src="../assets/images/轮播2.jpg" alt="">
+        <img class="w-100" src="//ossweb-img.qq.com/upload/adw/image/194/20220206/a3f661174ac986b0d79226a8a9ca80c3.jpeg" alt="">
       </swiper-slide>
       <swiper-slide>
-        <img class="w-100" src="../assets/images/轮播3.jpg" alt="">
+        <img class="w-100" src="//ossweb-img.qq.com/upload/adw/image/194/20220127/ad3e7fff8e5744490295e77bf9ea7e4a.jpeg" alt="">
       </swiper-slide>
 
       <div class="swiper-pagination pagination-home text-right px-3 pb-2" slot="pagination"></div>

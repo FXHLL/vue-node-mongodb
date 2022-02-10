@@ -4,15 +4,15 @@
       <div v-if=" hero_swiper">
           <swiper :options="swiperOption" class="my-3 boder-bottom">
             <swiper-slide>
-              <img class="w-100" src="../assets/images/1.jpg" alt="" height="116">
+              <img class="w-100" src="//ossweb-img.qq.com/upload/webplat/info/yxzj/20211116/310571306364037.png" alt="" height="116">
             </swiper-slide>
   
             <swiper-slide>
-              <img class="w-100" src="../assets/images/2.png" alt="" height="116">
+              <img class="w-100" src="//ossweb-img.qq.com/upload/webplat/info/yxzj/20210623/39070448590418.jpg" alt="" height="116">
             </swiper-slide>
 
             <swiper-slide>
-              <img class="w-100" src="../assets/images/3.jpg" alt="" height="116">
+              <img class="w-100" src="//ossweb-img.qq.com/upload/webplat/info/yxzj/20220106/782111465173105.jpg" alt="" height="116">
             </swiper-slide>
             <div class="swiper-pagination pagination-home text-right px-3 pb-2" slot="pagination"></div>
           </swiper>
