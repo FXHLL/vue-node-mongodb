@@ -15,17 +15,24 @@
       <div class="swiper-pagination pagination-home text-right px-3 pb-2" slot="pagination"></div>
     </swiper>
 
-    <div class="nav-icons bg-white mt-3 text-center pt-3">
-      <div class="d-flex flex-wrap">
-        <div class="nav-item mb-4 text-dark-2" v-for="n in 12" :key="n">
-          <i :class="['sprite',`sprite-news-${n}`]"></i>
-          <div class="pb-2 fs-sm">{{navItemsDiv[n-1]}}</div>
+    <div class="nav-icons bg-white mt-2 text-center">
+      <div class="nav-body d-flex flex-wrap pt-3" :class="{nav_pack:nav_pack}">
+        <div class="nav-item mb-2 text-dark-2 d-flex flex-column ai-center" v-for="n in 12" :key="n">
+          <i class="flex-1" :class="['sprite',`sprite-news-${n}`]"></i>
+          <div class="py-1 fs-sm">{{navItemsDiv[n-1]}}</div>
         </div>
       </div>
 
-      <div class="bg-light py-2 d-flex ai-center jc-center">
-        <i class="sprite sprite-arrow mr-1"></i>
-        <span class="fs-sm">收起</span>
+      <div class="bg-light py-1 d-flex ai-center jc-center" @click="nav_pack = !nav_pack">
+        <div v-if="nav_pack">
+          <i class="sprite sprite-arrow mr-1" style="transform:rotate(180deg);"></i>
+          <span class="fs-sm">展开</span>
+        </div>
+        <div v-else>
+          <i class="sprite sprite-arrow mr-1"></i>
+          <span class="fs-sm">收起</span>
+        </div>
+
       </div>
     </div>
 
@@ -77,7 +84,24 @@
     </my-card-list>
 
 
-    <my-card-list title="英雄列表" icon="card-hero" :categories="heroesCats" hero_swiper v-if="heroesCats">
+    <my-card-list title="英雄列表" icon="card-hero" :categories="heroesCats" hero_swiper v-if="heroesCats != []">
+      <template #hero_swiper>
+        <swiper :options="swiperOption" class="my-3 boder-bottom">
+          <swiper-slide>
+            <img class="w-100" src="//ossweb-img.qq.com/upload/webplat/info/yxzj/20211116/310571306364037.png" alt="" height="116">
+          </swiper-slide>
+
+          <swiper-slide>
+            <img class="w-100" src="//ossweb-img.qq.com/upload/webplat/info/yxzj/20210623/39070448590418.jpg" alt="" height="116">
+          </swiper-slide>
+
+          <swiper-slide>
+            <img class="w-100" src="//ossweb-img.qq.com/upload/webplat/info/yxzj/20220106/782111465173105.jpg" alt="" height="116">
+          </swiper-slide>
+          <div class="swiper-pagination pagination-home text-right px-3 pb-2" slot="pagination"></div>
+        </swiper>
+      </template>
+
       <template #items="{category}">
         <div class="d-flex flex-wrap" style="margin:0 -0.5rem;">
           <router-link :to="`/heroes/${hero._id}`" tag="div" v-for="(hero,i) in category.heroList" :key="i"
@@ -122,7 +146,8 @@ export default {
         loop: true,//循环切换
       },
       newCats:[],
-      heroesCats:[]
+      heroesCats:[],
+      nav_pack:true
     }
   },
   methods:{
@@ -165,12 +190,24 @@ export default {
   .nav-icons{
     border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
-    .nav-item{
-      width: 25%;
-      height: 3.8462rem;
-      border-right: 1px solid $border-color;
-      &:nth-child(4n+0){
-        border-right: none;
+    width: 100%;
+    .nav-body{
+      height: 14.0385rem;
+      transition: 0.3s height;
+      &.nav_pack{
+        height:5.3846rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex-wrap: nowrap;
+      }
+      .nav-item{
+        flex-shrink: 0;
+        width: 25%;
+        height: 3.8462rem;
+        border-right: 1px solid $border-color;
+        &:nth-child(4n+0){
+          border-right: none;
+        }
       }
     }
   }
@@ -181,6 +218,7 @@ export default {
     padding:0.0769rem 0.1538rem;
     white-space: nowrap;
   }
+
 
 
 </style>

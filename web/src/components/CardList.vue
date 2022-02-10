@@ -1,23 +1,8 @@
 <template>
     <my-card :title="title" :icon="icon" :hero_swiper="hero_swiper">
-      <!-- 英雄详情的轮播,由hero_swiper参数控制 -->
-      <div v-if=" hero_swiper">
-          <swiper :options="swiperOption" class="my-3 boder-bottom">
-            <swiper-slide>
-              <img class="w-100" src="//ossweb-img.qq.com/upload/webplat/info/yxzj/20211116/310571306364037.png" alt="" height="116">
-            </swiper-slide>
-  
-            <swiper-slide>
-              <img class="w-100" src="//ossweb-img.qq.com/upload/webplat/info/yxzj/20210623/39070448590418.jpg" alt="" height="116">
-            </swiper-slide>
-
-            <swiper-slide>
-              <img class="w-100" src="//ossweb-img.qq.com/upload/webplat/info/yxzj/20220106/782111465173105.jpg" alt="" height="116">
-            </swiper-slide>
-            <div class="swiper-pagination pagination-home text-right px-3 pb-2" slot="pagination"></div>
-          </swiper>
-      </div>
       
+      <slot name="hero_swiper"></slot>
+
       <div class="nav jc-between">
         <div class="nav-item" 
         :class="{active:activeNum === i}"
@@ -53,7 +38,7 @@ export default {
         title:{type:String,required:true},//required:必须传递的参数 
         icon:{type:String,required:true},
         categories:{type:Array,required:true},
-        hero_swiper:{type:Boolean}//轮播图的显示
+        hero_swiper:{type:Boolean}
     },
     data() {
         return {

@@ -1,6 +1,6 @@
 <template>
     <div class="card bg-white p-3 mt-3">
-      <div class="card-header d-flex ai-center" :class="{'border-bottom':!plain && !hero_swiper,'pb-3':!plain }">
+      <div class="card-header d-flex ai-center" :class="{'border-bottom':!plain && !hero_swiper,'pb-3':!plain && !hero_swiper }">
         <i class="iconfont" :class="`icon-${icon}`"></i>
         <h3 class="flex-1 fs-xl pl-2 m-0">{{title}}</h3>
         <i v-if="!plain" class="iconfont icon-more"></i>
