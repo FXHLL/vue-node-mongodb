@@ -1,5 +1,6 @@
 <template>
     <div class="page-hero" v-if="model">
+
         <div class="topbar bg-black py-2 px-3 d-flex ai-center">
             <img src="../assets/logo.png" height="30">
             <div class="px-2 flex-1">
@@ -10,22 +11,22 @@
 
         <div class="top" :style="{'background-image':`url(${model.banner})`}">
             <div class="info text-white p-3 h-100 d-flex flex-column jc-end">
-                <div class="fs-sm">{{model.title}}</div>
-                <h2 class="my-2">{{model.name}}</h2>
-                <div class="fs-sm">{{model.categories.map(v => v.name).join('/')}}</div>
+                <div class="fs-sm vivify fadeInLeft duration-1000" >{{model.title}}</div>
+                <h2 class="my-2 vivify fadeInLeft delay-200 duration-1000">{{model.name}}</h2>
+                <div class="fs-sm vivify fadeInLeft delay-300 duration-1500">{{model.categories.map(v => v.name).join('/')}}</div>
                 <div class="d-flex jc-between pt-2">
                     <div class="scores d-flex ai-center" v-if="model.scores">
-                        <span>难度</span>
-                        <span class="badge bg-primary">{{model.scores.difficult}}</span>
+                        <span class="vivify fadeInLeft delay-200 duration-1000">难度</span>
+                        <span class="badge bg-primary vivify fadeInLeft delay-200 duration-1000">{{model.scores.difficult}}</span>
 
-                        <span>技能</span>
-                        <span class="badge bg-blue">{{model.scores.skills}}</span>
+                        <span class="vivify fadeInLeft delay-400 duration-1000">技能</span>
+                        <span class="badge bg-blue vivify fadeInLeft delay-400 duration-1000">{{model.scores.skills}}</span>
 
-                        <span>攻击</span>
-                        <span class="badge bg-danger">{{model.scores.attack}}</span>
+                        <span class="vivify fadeInLeft delay-600 duration-1000">攻击</span>
+                        <span class="badge bg-danger vivify fadeInLeft delay-600 duration-1000">{{model.scores.attack}}</span>
 
-                        <span>生存</span>
-                        <span class="badge bg-dark-3">{{model.scores.survive}}</span>     
+                        <span class="vivify fadeInLeft delay-800 duration-1000">生存</span>
+                        <span class="badge bg-dark-3 vivify fadeInLeft delay-800 duration-1000">{{model.scores.survive}}</span>     
                     </div>
                     <router-link to="/" tag="div" class="text-grey d-flex ai-center">皮肤：9&nbsp;&nbsp;<span class="fs-xl">&gt;</span></router-link>
                 </div>

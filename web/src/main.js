@@ -16,9 +16,10 @@ import App from './App.vue'
 //   // 循环播放
 //   loop: true 
 // })
-
+import './assets/scss/vivify.min.css'
 import './assets/iconfont/iconfont.css'
 import './assets/scss/style.scss'
+
 import router from './router'
 
 Vue.config.productionTip = false

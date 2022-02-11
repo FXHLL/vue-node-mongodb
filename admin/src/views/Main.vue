@@ -64,12 +64,12 @@
             <el-dropdown>
                 <i class="el-icon-setting" style="margin-right: 15px"></i>
                 <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>查看</el-dropdown-item>
-                <el-dropdown-item>新增</el-dropdown-item>
-                <el-dropdown-item>删除</el-dropdown-item>
+                <el-dropdown-item>前台界面</el-dropdown-item>
+                <el-dropdown-item>github</el-dropdown-item>
+                <el-dropdown-item>退出登录</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
-            <span>王小虎</span>
+            <span>后台界面</span>
             </el-header>
             
             <el-main>
@@ -98,14 +98,10 @@
 <script>
   export default {
     data() {
-      const item = {
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      };
       return {
-        tableData: Array(20).fill(item)
       }
-    }
+    },
+    methods: {
+    },
   };
 </script>
