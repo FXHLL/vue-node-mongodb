@@ -6,8 +6,14 @@
         <el-table-column prop="_id" label="ID" width="220">
         <!-- 对应列内容的字段名 -->
         </el-table-column>
+
+        <el-table-column prop="power" label="权限" width="220">
+        </el-table-column>
+
         <el-table-column prop="username" label="用户名" width="220">
         </el-table-column>
+
+
 
         <el-table-column
         fixed="right"
@@ -25,7 +31,8 @@
             <el-button
             @click = "remove(scope.row)"
             type="text"
-            size="small">
+            size="small"
+            v-permission>
             删除
             </el-button>
         </template>

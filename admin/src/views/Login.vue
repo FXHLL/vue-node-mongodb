@@ -21,7 +21,10 @@
 export default {
     data(){
         return {
-            item:{}
+            item:{
+                username:'黎明',
+                password:'123456'
+            }
         }
     },
     methods:{

@@ -1,11 +1,17 @@
 <template>
     <div>
         <el-container style="height: 100vh"><!-- 100vh表示屏幕高度 https://blog.csdn.net/weixin_42192534/article/details/80289782 -->
-        <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-            <el-menu router :default-openeds="['$route.path']" unique-opened :default-active="$route.path"><!-- 启用router会在激活导航时以 index 作为 path 进行路由跳转 -->
+        <el-aside width="200px" style="background-color: #2b3e56">
+            <el-menu 
+            router  
+            unique-opened 
+            :default-active="$route.path"
+            background-color="#2b3e56"
+            text-color="#fff"
+            active-text-color="#42b581"><!-- 启用router会在激活导航时以 index 作为 path 进行路由跳转 -->
 
             <el-submenu index="1">
-                <template slot="title"><i class="el-icon-message"></i>内容管理</template>
+                <template slot="title"><i class="el-icon-document"></i>内容管理</template>
 
                 <el-menu-item-group>
                   <template slot="title">物品</template>
@@ -39,7 +45,7 @@
             </el-submenu>
 
             <el-submenu index="3">
-                <template slot="title"><i class="el-icon-message"></i>系统管理</template>
+                <template slot="title"><i class="el-icon-setting"></i>系统管理</template>
 
                 <el-menu-item-group>
                   <template slot="title">分类</template>
@@ -60,20 +66,24 @@
         </el-aside>
         
         <el-container>
-            <el-header style="text-align: right; font-size: 12px">
+            <el-header style="text-align: right; font-size: 13px">
+            <span style="float:left;font-size:15px">王者荣耀后台编辑</span>
+            <span>{{user.username}}/{{user.power}}</span>
+            <i class="el-icon-mobile-phone" style="margin-left:20px;color:#fff">： </i>
             <el-dropdown>
-                <i class="el-icon-setting" style="margin-right: 15px"></i>
+                
+                <i class="el-icon-arrow-down" style="margin-right:15px;color:#fff;cursor:pointer"></i>
                 <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>前台界面</el-dropdown-item>
-                <el-dropdown-item>github</el-dropdown-item>
-                <el-dropdown-item>退出登录</el-dropdown-item>
+                <el-dropdown-item @click.native="web">移动界面</el-dropdown-item>
+                <el-dropdown-item @click.native="github">github</el-dropdown-item>
+                <el-dropdown-item @click.native="exit">重新登录</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
-            <span>后台界面</span>
             </el-header>
             
-            <el-main>
-            <router-view :key="$router.path"></router-view>
+            <el-main >
+            <router-view :key="$router.path">
+            </router-view>
             <!-- 使用路由路径区分 -->
             </el-main>
         </el-container>
@@ -85,23 +95,41 @@
 
 <style>
   .el-header {
-    background-color: #B3C0D1;
-    color: #333;
+    background-color: rgb(69 84 104);
+    color: #fff;
     line-height: 60px;
   }
-  
-  .el-aside {
-    color: #333;
+  .el-menu{
+    border: 0;
   }
+  
+
 </style>
 
 <script>
   export default {
     data() {
       return {
+        user:{}
       }
     },
     methods: {
+      async getuser(){
+        const res = await this.$http.get('/getuser')
+        this.user = res.data
+      },
+      web(){
+        window.open(location.origin)
+      },
+      github(){
+        window.open('https://github.com/FXHLL/vue-node-mongodb')
+      },
+      exit(){
+        this.$router.push('/login')
+      }
     },
+    created(){
+      this.getuser()
+    }
   };
 </script>

@@ -17,6 +17,17 @@ Vue.mixin({
   }
 })
 
+Vue.directive('permission',{
+  async bind(el){
+    const res = await http.get('/getuser')
+    const power = res.data.power
+    if(power === "普通用户"){
+      el.setAttribute('disabled',false)
+      el.classList.add("ban")
+    }
+  }
+})
+
 new Vue({
   router,
   render: h => h(App)

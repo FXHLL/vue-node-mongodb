@@ -14,6 +14,11 @@ module.exports = app=>{
     //资源中间件
     const resourceMiddleware = require('../../middleware/resource')
 
+    //获取用户
+    app.use('/admin/api/getuser',authMiddleware(),(req,res)=>{
+        res.send(res.locals.user)
+    })
+
     //通用接口实现的的中间件，再将router载到应用上
     app.use("/admin/api/rest/:resource",authMiddleware(),resourceMiddleware(),router)//将子路由挂在到应用上
 

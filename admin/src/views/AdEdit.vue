@@ -40,7 +40,7 @@
 
 
             <el-form-item>
-                <el-button type="primary" native-type="submit">保存</el-button><!-- type组件按钮样式，native-type原生按钮样式 -->
+                <el-button type="primary" native-type="submit" v-permission>保存</el-button><!-- type组件按钮样式，native-type原生按钮样式 -->
             </el-form-item>
         </el-form>
     </div>

@@ -5,7 +5,7 @@
 </template>
 
 <style>
-  html{
+  html,body{
     margin: 0;
     padding: 0;
   }

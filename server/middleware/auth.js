@@ -11,6 +11,7 @@ const auth = options => async (req,res,next)=>{
     assert(id,401,'请先登录')//token不对
     const AdminUser = require('../models/AdminUser')
     req.user = await AdminUser.findById(id)
+    res.locals.user = req.user
     assert(req.user,401,'请先登录')//没有此用户
     await next()
 }

@@ -33,7 +33,8 @@
             <el-button
             @click = "remove(scope.row)"
             type="text"
-            size="small">
+            size="small"
+            v-permission>
             删除
             </el-button>
         </template>

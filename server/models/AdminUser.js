@@ -8,7 +8,8 @@ const schema = new mongoose.Schema({
         set(value){//类似getter
             return require('bcryptjs').hashSync(value,10)//将密码通过bcryptjs库散列
         }
-    }
+    },
+    power:{type:String}
 })
 
 module.exports = mongoose.model('AdminUser',schema)

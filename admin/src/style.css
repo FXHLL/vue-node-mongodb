@@ -21,3 +21,8 @@
     height: 5rem;
     display: block;
   }
+
+  .ban {
+    cursor:not-allowed;
+  }
+
